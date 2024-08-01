@@ -15,8 +15,10 @@ const Orders = () => {
   const fetchAllOrders = async ()=>{
     const responsre=await axios.get(url+"/api/order/list")
     if(responsre.data.success){
-      setOrders(responsre.data.data)
-      console.log(responsre.data.data);
+      const data=responsre.data.data
+      data.reverse()
+      setOrders(data)
+
     }else{
       toast.error("ERROR")
     }
