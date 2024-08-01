@@ -14,6 +14,7 @@ const List = () => {
       //  console.log(response.data);
        if(response.data.success){
         setList(response.data.result)
+        list.reverse()
        }else{
         toast.error("ERROR")
        }
